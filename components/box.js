@@ -23,24 +23,35 @@ class Box extends Component {
     this.feedbackGenerator = NativeModules.FeedbackManager;
   }
 
-  onStartShouldSetResponder() {
-    return true;
-  }
-
   onResponderGrant(event) {
+    this.released = false;
     this.feedbackGenerator.select();
     this.feedbackGenerator.prepareImpact();
   }
 
   onResponderRelease(event) {
-    this.feedbackGenerator.impact();
+    // this.feedbackGenerator.impact();
+  }
+
+  onResponderMove(event) {
+    let direction = 0;
+    if (this.previous) direction = event.nativeEvent.force - this.previous;
+    this.previous = event.nativeEvent.force;
+    console.log(event.nativeEvent.force);
+
+    if (direction < 0 && !this.released) {
+      this.released = true;
+      this.feedbackGenerator.impact();
+    }
   }
 
   render() {
     return <View style={styles.box}
-      onStartShouldSetResponder={this.onStartShouldSetResponder.bind(this)}
+      onStartShouldSetResponder={(event) => true}
+      onMoveShouldSetResponder={(event) => true}
       onResponderGrant={this.onResponderGrant.bind(this)}
       onResponderRelease={this.onResponderRelease.bind(this)}
+      onResponderMove={this.onResponderMove.bind(this)}
       />
   }
 }
