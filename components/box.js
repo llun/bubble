@@ -23,24 +23,25 @@ class Box extends Component {
     this.feedbackGenerator = NativeModules.FeedbackManager;
   }
 
-  onPressIn(event) {
-    this.feedbackGenerator.prepareNotify();
-    if (this.timer) { clearTimeout(this.timer); }
-    this.timer = setTimeout(() => {
-      this.feedbackGenerator.notifyWithFeedback(consts.NOTIFY_ERROR);
-    }, 1000);
+  onStartShouldSetResponder() {
+    return true;
   }
 
-  onPressOut(event) {
-    clearTimeout(this.timer);
+  onResponderGrant(event) {
+    this.feedbackGenerator.select();
+    this.feedbackGenerator.prepareImpact();
+  }
+
+  onResponderRelease(event) {
+    this.feedbackGenerator.impact();
   }
 
   render() {
-    return <TouchableWithoutFeedback
-      onPressIn={(event) => { this.onPressIn(event); }}
-      onPressOut={(event) => { this.onPressOut(event); }}>
-      <View style={styles.box} />
-    </TouchableWithoutFeedback>;
+    return <View style={styles.box}
+      onStartShouldSetResponder={this.onStartShouldSetResponder.bind(this)}
+      onResponderGrant={this.onResponderGrant.bind(this)}
+      onResponderRelease={this.onResponderRelease.bind(this)}
+      />
   }
 }
 
