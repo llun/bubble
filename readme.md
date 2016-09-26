@@ -13,3 +13,5 @@ number of vibration e.g. `SUCCESS` and `WARNING` are vibrate two time with diffe
 When apply this feedback with touch, somehow it give the control feeling how strong it vibrate even it doesn't have that parameter,
 e.g. when using `select` which provide the soft vibrate with force increase variable, the feeling of pushing down and soft
 vibration cause the feeling like it vibrate stronger. Same as pulling out with `impact`.
+
+The progress so far can emulate soft and hard feeling with force touch, next will try with time and different vibration in different time.
