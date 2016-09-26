@@ -24,24 +24,21 @@ class Box extends Component {
   }
 
   onResponderGrant(event) {
-    this.released = false;
-    this.feedbackGenerator.select();
-    this.feedbackGenerator.prepareImpact();
-  }
-
-  onResponderRelease(event) {
-    // this.feedbackGenerator.impact();
+    this.previous = null;
   }
 
   onResponderMove(event) {
     let direction = 0;
     if (this.previous) direction = event.nativeEvent.force - this.previous;
     this.previous = event.nativeEvent.force;
-    console.log(event.nativeEvent.force);
 
-    if (direction < 0 && !this.released) {
-      this.released = true;
+    if (direction < 0) {
       this.feedbackGenerator.impact();
+      this.feedbackGenerator.prepareSelect();
+    } else if (direction > 0) {
+      this.previous = null;
+      this.feedbackGenerator.select();
+      this.feedbackGenerator.prepareImpact();
     }
   }
 
