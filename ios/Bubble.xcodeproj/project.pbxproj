@@ -25,6 +25,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		BC2358E01D97C5F600823C46 /* BBAFeedbackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2358DF1D97C5F600823C46 /* BBAFeedbackManager.m */; };
 		BC2358E31D97C8F000823C46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2358E21D97C8F000823C46 /* UIKit.framework */; };
+		BCA81DA81D9A12E100DDEE68 /* BBAFeedbackGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA81DA71D9A12E100DDEE68 /* BBAFeedbackGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,8 @@
 		BC2358DE1D97C5F600823C46 /* BBAFeedbackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAFeedbackManager.h; path = Bubble/BBAFeedbackManager.h; sourceTree = "<group>"; };
 		BC2358DF1D97C5F600823C46 /* BBAFeedbackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAFeedbackManager.m; path = Bubble/BBAFeedbackManager.m; sourceTree = "<group>"; };
 		BC2358E21D97C8F000823C46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BCA81DA61D9A12E100DDEE68 /* BBAFeedbackGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAFeedbackGenerator.h; path = Bubble/BBAFeedbackGenerator.h; sourceTree = "<group>"; };
+		BCA81DA71D9A12E100DDEE68 /* BBAFeedbackGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAFeedbackGenerator.m; path = Bubble/BBAFeedbackGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				BC2358DE1D97C5F600823C46 /* BBAFeedbackManager.h */,
 				BC2358DF1D97C5F600823C46 /* BBAFeedbackManager.m */,
+				BCA81DA61D9A12E100DDEE68 /* BBAFeedbackGenerator.h */,
+				BCA81DA71D9A12E100DDEE68 /* BBAFeedbackGenerator.m */,
 			);
 			name = Bubble;
 			sourceTree = "<group>";
@@ -382,7 +387,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "bubble" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Bubble" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -567,6 +572,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				BCA81DA81D9A12E100DDEE68 /* BBAFeedbackGenerator.m in Sources */,
 				BC2358E01D97C5F600823C46 /* BBAFeedbackManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "bubble" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Bubble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

@@ -47,7 +47,6 @@ class Box extends Component {
       onStartShouldSetResponder={(event) => true}
       onMoveShouldSetResponder={(event) => true}
       onResponderGrant={this.onResponderGrant.bind(this)}
-      onResponderRelease={this.onResponderRelease.bind(this)}
       onResponderMove={this.onResponderMove.bind(this)}
       />
   }
